@@ -11,7 +11,7 @@ load_dotenv()
 
 ACCOUNT_SID = os.getenv('ACCOUNT_SID')
 AUTH_TOKEN = os.getenv('AUTH_TOKEN')
-ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')
+VK_TOKEN = os.getenv('VK_TOKEN')
 METHOD_URL = os.getenv('METHOD_URL')
 VERSION_API = os.getenv('VERSION_API')
 NUMBER_FROM = os.getenv('NUMBER_FROM')
@@ -21,7 +21,7 @@ client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
 def get_status(user_id):
     params = {
-        'access_token': ACCESS_TOKEN,
+        'access_token': VK_TOKEN,
         'user_ids': user_id,
         'fields': 'online',
         'v': VERSION_API
