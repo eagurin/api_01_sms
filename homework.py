@@ -20,6 +20,7 @@ client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
 
 def get_status(user_id):
+    url = 'https://api.vk.com/method/'
     params = {
         'access_token': VK_TOKEN,
         'user_ids': user_id,
@@ -27,7 +28,7 @@ def get_status(user_id):
         'v': VERSION_API
     }
     response = requests.post(
-        f'{METHOD_URL}users.get', params=params).json()
+        f'{url}users.get', params=params).json()
     status = response['response'][0]['online']
     return status
 
